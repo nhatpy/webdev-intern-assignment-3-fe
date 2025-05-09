@@ -1,11 +1,13 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { Layout, Menu } from "antd";
 import { icons } from "../utils";
+import { useTranslation } from "react-i18next";
 
 const { Header, Sider, Content } = Layout;
 
 export const DefaultLayout = () => {
 	const location = useLocation();
+	const { t } = useTranslation();
 
 	const getSelectedKey = () => {
 		if (location.pathname.includes("/search")) return "searchScores";
@@ -18,22 +20,22 @@ export const DefaultLayout = () => {
 	const menuItems = [
 		{
 			key: "dashboard",
-			label: <Link to="/">Dashboard</Link>,
+			label: <Link to="/">{t("dashboard")}</Link>,
 			icon: icons.home
 		},
 		{
 			key: "searchScores",
-			label: <Link to="/search">Search Scores</Link>,
+			label: <Link to="/search">{t("search_scores")}</Link>,
 			icon: icons.search
 		},
 		{
 			key: "reports",
-			label: <Link to="/report">Reports</Link>,
+			label: <Link to="/report">{t("reports")}</Link>,
 			icon: icons.chart
 		},
 		{
 			key: "settings",
-			label: <Link to="/setting">Settings</Link>,
+			label: <Link to="/setting">{t("settings")}</Link>,
 			icon: icons.settings
 		}
 	];
@@ -61,7 +63,9 @@ export const DefaultLayout = () => {
 						background: "linear-gradient(to bottom, #f5d020, #339989)"
 					}}
 				>
-					<h3 className="text-lg font-bold text-black px-4 pt-6 pb-2">Menu</h3>
+					<h3 className="text-lg font-bold text-black px-4 pt-6 pb-2">
+						{t("menu")}
+					</h3>
 					<Menu
 						selectedKeys={[getSelectedKey()]}
 						items={menuItems}

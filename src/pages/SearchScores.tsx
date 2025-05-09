@@ -3,20 +3,36 @@ import { useEffect, useState } from "react";
 import type { IScore } from "../utils";
 import { useApi } from "../hooks";
 import { scoreApis } from "../apis/scoreApis";
+import { useSearchParams } from "react-router-dom";
 
 export const SearchScores = () => {
-	const [registrationNumber, setRegistrationNumber] = useState<string>("");
+	const [searchParams, setSearchParams] = useSearchParams();
+
+	const [registrationNumber, setRegistrationNumber] = useState<string>(
+		searchParams.get("sbd") || ""
+	);
 	const [score, setScore] = useState<IScore | null>(null);
 	const { errorMessage, loading, callApi: callScoreApi } = useApi<void>();
 
-	const handleSearch = async () => {
+	const handleChangeParams = () => {
+		setSearchParams({ sbd: registrationNumber });
+	};
+	const handleSearch = async (sbd: string) => {
+		setSearchParams({ sbd: registrationNumber });
 		await callScoreApi(async () => {
-			const { data } = await scoreApis.getBySbd(registrationNumber);
+			const { data } = await scoreApis.getBySbd(sbd);
 			if (data) {
 				setScore(data);
 			}
 		});
 	};
+	useEffect(() => {
+		const sbd = searchParams.get("sbd");
+		if (sbd) {
+			handleSearch(sbd);
+		}
+	}, [searchParams]);
+
 	useEffect(() => {
 		if (errorMessage) {
 			message.error(errorMessage, 3);
@@ -40,7 +56,7 @@ export const SearchScores = () => {
 						size="large"
 						className="bg-black! !text-white !py-6 !px-8 hover:!border-black focus:!border-black focus:!outline-none"
 						loading={loading}
-						onClick={handleSearch}
+						onClick={handleChangeParams}
 						disabled={loading || !registrationNumber}
 					>
 						Submit
