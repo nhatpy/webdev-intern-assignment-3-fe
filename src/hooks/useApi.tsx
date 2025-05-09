@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AxiosError, HttpStatusCode } from "axios";
+import { AxiosError } from "axios";
 
 import { useBoolean } from "./useBoolean";
 
@@ -34,7 +34,6 @@ export const useApi = <T,>(): UseApiRequestReturn<T> => {
 		} catch (error: unknown) {
 			const axiosError = error as AxiosError<{
 				message: string;
-				errorStatus: HttpStatusCode;
 			}>;
 			const errorMessage = axiosError.response?.data?.message;
 			if (errorMessage) {
