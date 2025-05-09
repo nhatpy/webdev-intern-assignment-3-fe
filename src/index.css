@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+.ant-menu.custom-menu {
+	background: linear-gradient(to bottom, #f5d020, #339989) !important;
+	color: #000;
+	border-inline-end: none;
+	flex: 1;
+}
+
+.ant-menu.custom-menu .ant-menu-item:hover {
+	background-color: rgba(255, 255, 255, 0.2) !important;
+	color: #395dbe !important;
+}
+
+.ant-menu.custom-menu .ant-menu-item-selected {
+	background-color: rgba(255, 255, 255, 0.4) !important;
+	color: #000 !important;
+	font-weight: bold;
+}
