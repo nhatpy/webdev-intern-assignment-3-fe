@@ -1,54 +1,100 @@
-# React + TypeScript + Vite
+# [GOLDEN OWL SOLUTIONS] JAVA INTERN - ABILITY TEST
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Common Information
+- **Tên website**: G-Scores  
+- **Giao diện**: Sử dụng template do [**Golden Owl Solutions**](https://github.com/GoldenOwlAsia) cung cấp  
+- **Phát triển bởi**: [**Đỗ Long Nhật**](https://github.com/nhatpy)
+- **Đối tượng sử dụng**: Học sinh và phụ huynh có nhu cầu tra cứu điểm thi  
+- **Mục tiêu**: Cung cấp nền tảng tra cứu điểm thi nhanh chóng, dễ sử dụng và chính xác  
+- **Mục đích sử dụng**: Bài kiểm tra ứng viên thực tập
+- **Related Repository**: [Backend Source](https://github.com/nhatpy/webdev-intern-assignment-3-fe)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
+## Getting Started
+If you don't want to run on your local device, you can check this deployment on
 ```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+https://webdev-intern-assignment-3-fe.vercel.app/
 ```
+### Prerequisites
+1. NodeJS is needed for run locally, so download NodeJS from [this](https://nodejs.org/en/download)
+2. Please check your node version by
+  ```sh
+  node -v
+  ```
+3. Don't forget to instal node package manager (npm) on your personal device
+ ```sh
+  npm install npm@latest -g
+  ```
+### Installation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Clone the repo
+   ```sh
+   git clone https://github.com/nhatpy/webdev-intern-assignment-3-fe.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Create .env file on root direction and follow sample.env to config `VITE_API_URL`
+   ```js
+   VITE_API_URL=<your_server_host>
+   ```
+5. After that, run website on development mode
+   ```sh
+   npm run dev
+   ```
+## Built With
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### Frontend
+ [![React][React.js]][React-url]
+ [![Tailwind][Tailwind.css]][Tailwind-url]
+ [![Ant Design][Antd.img]][Antd-url]
+ [![Vercel][Vercel.img]][Vercel-url]
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+#### Backend
+ [![Spring Boot][Spring.img]][Spring-url]
+ [![Render][Render.img]][Render-url]
+
+#### Database
+ [![MySQL][MySQL.img]][MySQL-url]
+ [![Redis][Redis.img]][Redis-url]
+
+#### Tools
+ [![Swagger][Swagger.img]][Swagger-url]
+ [![Docker][Docker.img]][Docker-url]
+ [![VSCode][VSCode.img]][VSCode-url]
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+
+[Tailwind.css]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[Tailwind-url]: https://tailwindcss.com/
+
+[Antd.img]: https://img.shields.io/badge/Ant_Design-0170FE?style=for-the-badge&logo=ant-design&logoColor=white
+[Antd-url]: https://ant.design/
+
+[Vercel.img]: https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white
+[Vercel-url]: https://vercel.com/
+
+[Spring.img]: https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white
+[Spring-url]: https://spring.io/projects/spring-boot
+
+[Render.img]: https://img.shields.io/badge/Render-000000?style=for-the-badge&logo=render&logoColor=white
+[Render-url]: https://render.com/
+
+[MySQL.img]: https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white
+[MySQL-url]: https://www.mysql.com/
+
+[Redis.img]: https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white
+[Redis-url]: https://redis.io/
+
+[Swagger.img]: https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black
+[Swagger-url]: https://swagger.io/
+
+[Docker.img]: https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white
+[Docker-url]: https://www.docker.com/
+
+[VSCode.img]: https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white
+[VSCode-url]: https://code.visualstudio.com/
