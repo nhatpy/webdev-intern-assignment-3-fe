@@ -76,28 +76,32 @@ export const Reports = () => {
 	};
 
 	return (
-		<div className=" mx-auto bg-white p-8 shadow-lg rounded-lg">
+		<div className="mx-auto bg-white p-8 shadow-lg rounded-lg">
 			<h1 className="text-4xl font-bold text-center text-blue-600 mb-8">
 				Reports
 			</h1>
 
 			<div className="flex flex-col justify-center mb-4">
 				<h1 className="text-3xl font-bold">Statistic Chart</h1>
-				<Bar data={data} options={chartConfig} />
+				<div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+					<Bar data={data} options={chartConfig} />
+				</div>
 			</div>
 
 			<div className="flex flex-col justify-center mb-4">
 				<h1 className="text-3xl font-bold">Top 10 Students</h1>
-				<Table
-					columns={statisticTableConfig.map((col) => ({
-						...col,
-						align: "center"
-					}))}
-					dataSource={topGroupAStudents}
-					rowKey="sbd"
-					pagination={false}
-					loading={loading}
-				/>
+				<div className="overflow-x-auto">
+					<Table
+						columns={statisticTableConfig.map((col) => ({
+							...col,
+							align: "center"
+						}))}
+						dataSource={topGroupAStudents}
+						rowKey="sbd"
+						pagination={false}
+						loading={loading}
+					/>
+				</div>
 			</div>
 		</div>
 	);

@@ -40,21 +40,21 @@ export const SearchScores = () => {
 	}, [errorMessage]);
 
 	return (
-		<div className="flex flex-col items-center justify-center mt-4 gap-8">
-			<div className="bg-white shadow-md rounded-lg p-6 w-full">
-				<h1 className="text-3xl font-bold">User Registration</h1>
-				<p className="mt-4 text-xl">Registration Number:</p>
-				<div className="flex items-center justify-center mt-4 w-1/2 gap-2">
+		<div className="flex flex-col items-center justify-center mt-4 gap-8 px-4">
+			<div className="bg-white shadow-md rounded-lg p-6 w-full max-w-4xl">
+				<h1 className="text-2xl sm:text-3xl font-bold">User Registration</h1>
+				<p className="mt-4 text-lg sm:text-xl">Registration Number:</p>
+				<div className="flex flex-col sm:flex-row items-center sm:justify-start mt-4 gap-2">
 					<Input
 						placeholder="Enter your registration number"
-						className="mt-2 mb-4 !p-3 hover:!border-black focus:!border-black focus:!outline-none"
+						className="!p-3 w-full sm:w-2/3 hover:!border-black focus:!border-black focus:!outline-none"
 						value={registrationNumber}
 						onChange={(e) => setRegistrationNumber(e.target.value)}
 						disabled={loading}
 					/>
 					<Button
 						size="large"
-						className="bg-black! !text-white !py-6 !px-8 hover:!border-black focus:!border-black focus:!outline-none"
+						className="bg-black! !text-white !py-6 !px-8 w-full sm:w-auto hover:!border-black focus:!border-black focus:!outline-none"
 						loading={loading}
 						onClick={handleChangeParams}
 						disabled={loading || !registrationNumber}
@@ -63,10 +63,11 @@ export const SearchScores = () => {
 					</Button>
 				</div>
 			</div>
-			<div className="bg-white shadow-md rounded-lg p-6 w-full">
-				<h1 className="text-3xl font-bold mb-6">Detailed Scores</h1>
+
+			<div className="bg-white shadow-md rounded-lg p-6 w-full max-w-4xl">
+				<h1 className="text-2xl sm:text-3xl font-bold mb-6">Detailed Scores</h1>
 				{score && (
-					<div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-base">
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm sm:text-base">
 						<p>
 							<span className="font-semibold">SBD:</span> {score.sbd || "N/A"}
 						</p>

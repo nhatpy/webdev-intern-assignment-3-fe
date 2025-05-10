@@ -10,11 +10,11 @@ export const Settings = () => {
 
 	return (
 		<div className="p-4 space-y-4">
-			<h1 className="text-xl font-bold">{t("settings")}</h1>
-			<div className="flex items-center gap-2">
+			<h1 className="text-xl font-bold md:text-4xl">{t("settings")}</h1>
+			<div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-4 md:text-2xl">
 				<span>{t("language")}:</span>
 				<Select
-					className="w-1/12"
+					className="w-full md:w-1/4"
 					defaultValue={i18n.language}
 					onChange={handleChange}
 					options={[
