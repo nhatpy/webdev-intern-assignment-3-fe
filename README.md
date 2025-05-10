@@ -7,7 +7,7 @@
 - **Đối tượng sử dụng**: Học sinh và phụ huynh có nhu cầu tra cứu điểm thi  
 - **Mục tiêu**: Cung cấp nền tảng tra cứu điểm thi nhanh chóng, dễ sử dụng và chính xác  
 - **Mục đích sử dụng**: Bài kiểm tra ứng viên thực tập
-- **Related Repository**: [Backend Source](https://github.com/nhatpy/webdev-intern-assignment-3-fe)
+- **Related Repository**: [Backend Source](https://github.com/nhatpy/webdev-intern-assignment-3-be)
 
 
 ## Getting Started
